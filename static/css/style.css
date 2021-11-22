@@ -1,3 +1,130 @@
-h1 {
-    font-size: 24px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content div h1 {
+  padding: 10px 10px 15px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid blue;
+}
+
+#todo-input{
+  padding: 12.5px;
+  width: 300px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+#todo-input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+.todo-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  border: 1px solid black;
+  padding: 18px;
+  width: 500px;
+}
+
+.buttons {
+  margin-top: 4px;
+  margin-left: 15px;
+}
+
+.buttons button {
+  margin-right: 5px;
+}
+
+ul {
+  list-style-type: none;
+  border: 1px solid purple;
+}
+
+li {
+  position: relative;
+  padding: 15px;
+  border: 1px solid black;
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+  margin: auto;
+}
+
+.todo-icon {
+  margin-top: 5px;
+}
+
+.list-content {
+  margin-top: 8px;
+  margin-left: 28px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.list-btns {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.edit-btn {
+  margin-right: 5px;
+}
+
+/* Ripple effect */
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Button style */
+.buttons button {
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+  width: 64px;
+  height: 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: #2196f3;
+  box-shadow: 0 0 4px #999;
+  outline: none;
+}
+
+.list-btns button {
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+  width: 58px;
+  height: 38px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: #2196f3;
+  box-shadow: 0 0 4px #999;
+  outline: none;
 }

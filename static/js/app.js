@@ -1,22 +1,44 @@
-let myName = prompt("Enter your name: ");
+// let myName = prompt("Enter your name: ");
+let myName = "Shayan";
 let ul = document.getElementById('todo-list');
+
+const makeSpan = (data_icon, width = "20", height = "20") => {
+    var span = document.createElement("span");
+    span.setAttribute("class", "iconify");
+    span.setAttribute("data-icon", data_icon);
+    span.setAttribute("data-width", width);
+    span.setAttribute("data-height", height);
+    return span;
+}
 
 const create_fn = (data) => {
     var li = document.createElement("li");
+    var todoSpan = makeSpan("carbon:task", "25", "25");
+    todoSpan.classList.add("todo-icon");
+    li.appendChild(todoSpan);
+    var div = document.createElement("div")
+    div.setAttribute("class", "list-content")
     var liTxt = document.createTextNode(data);
-    li.appendChild(liTxt);
+    div.appendChild(liTxt)
+    li.appendChild(div)
+
+    var btnsDiv = document.createElement("div")
+    btnsDiv.setAttribute("class", "list-btns")
 
     var editBtn = document.createElement("button");
-    var editTxt = document.createTextNode("Edit");
+    editBtn.setAttribute("class", "edit-btn ripple");
     editBtn.setAttribute("onclick", "editTodo(this)");
-    editBtn.appendChild(editTxt);
-    li.appendChild(editBtn);
+    var editSpan = makeSpan("carbon:edit");
+    editBtn.appendChild(editSpan);
+    btnsDiv.appendChild(editBtn);
 
     var delBtn = document.createElement("button");
-    var delTxt = document.createTextNode("Delete");
+    delBtn.setAttribute("class", "ripple");
     delBtn.setAttribute("onclick", "deleteTodo(this)");
-    delBtn.appendChild(delTxt);
-    li.appendChild(delBtn);
+    var delSpan = makeSpan("carbon:delete");
+    delBtn.appendChild(delSpan);
+    btnsDiv.appendChild(delBtn);
+    li.appendChild(btnsDiv);
 
     ul.appendChild(li);
 }

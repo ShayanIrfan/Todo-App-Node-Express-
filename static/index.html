@@ -7,21 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <!-- axios cdn -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- iconify cdn -->
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 
 <body>
-    <div>
-        <h1>Todo App</h1>
-        <input type="text" name="todo" placeholder="Enter Todo" id="todo-input">
-        <button onclick="submit();">Submit</button>
-    </div>
+    <div class="content">
+        <div>
+            <h1>Todo App</h1>
+            <div class="todo-input-container">
+                <div class="input-div">
+                    <input type="text" name="todo" placeholder="Enter Todo" id="todo-input">
+                </div>
+                <div class="buttons">
+                    <button onclick="submit();" class="ripple">
+                        <span class="iconify" data-icon="carbon:add-alt" data-width="27" data-height="27"></span>
+                    </button>
+                    <button onclick="submit();" class="ripple">
+                        <span class="iconify" data-icon="carbon:delete" data-width="27" data-height="27"></span>
+                        <span class="iconify" data-icon="carbon:asterisk" data-width="13" data-height="13"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-    <div>
-        <ul id="todo-list">
+        <div>
+            <ul id="todo-list">
 
-        </ul>
+            </ul>
+        </div>
     </div>
     <script src="js/app.js"></script>
 </body>
