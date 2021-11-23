@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #090E11;
+  color: #FFFFFF;
+}
+
 .content div h1 {
   padding: 10px 10px 15px 10px;
   font-family: 'Poppins', sans-serif;
@@ -13,18 +18,28 @@
 .content {
   text-align: center;
   padding: 20px;
-  border: 1px solid blue;
 }
 
-#todo-input{
-  padding: 12.5px;
+#todo-input {
+  background-color: #262D31;
+  border: 2px solid #828689;
+  outline: none;
+  color: #FFFFFF;
+  padding: 13px;
   width: 300px;
-  border-radius: 20px;
+  border-radius: 25px;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+  transition: 0.2s;
+}
+
+#todo-input:focus {
+  border-color: #dddddd;
+  box-shadow: 0 0 10px #dddddd;
 }
 
 #todo-input::placeholder {
+  color: #828689;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
 }
@@ -34,7 +49,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: auto;
-  border: 1px solid black;
   padding: 18px;
   width: 500px;
 }
@@ -50,13 +64,11 @@
 
 ul {
   list-style-type: none;
-  border: 1px solid purple;
 }
 
 li {
   position: relative;
   padding: 15px;
-  border: 1px solid black;
   width: 450px;
   display: flex;
   flex-wrap: wrap;
@@ -82,19 +94,19 @@ li {
 }
 
 .edit-btn {
-  margin-right: 5px;
+  margin-right: 8.5px;
 }
 
 /* Ripple effect */
 .ripple {
   background-position: center;
-  transition: background 0.8s;
+  transition: background 0.3s;
 }
 .ripple:hover {
-  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  background: #373b3d radial-gradient(circle, transparent 1%, #373b3d 1%) center/15000%;
 }
 .ripple:active {
-  background-color: #6eb9f7;
+  background-color: #4d4d4d;
   background-size: 100%;
   transition: background 0s;
 }
@@ -110,9 +122,22 @@ li {
   text-transform: uppercase;
   cursor: pointer;
   color: white;
-  background-color: #2196f3;
+  background-color: #262D31;
   box-shadow: 0 0 4px #999;
   outline: none;
+}
+
+
+svg[data-icon = "carbon:delete"], svg[data-icon = "carbon:asterisk"] {
+  color: #E3BFBF;
+}
+
+svg[data-icon = "carbon:edit"] {
+  color: #a5c1d1;
+}
+
+svg[data-icon = "carbon:add-alt"] {
+  color: #c5e4be;
 }
 
 .list-btns button {
@@ -124,7 +149,7 @@ li {
   text-transform: uppercase;
   cursor: pointer;
   color: white;
-  background-color: #2196f3;
+  background-color: #262D31;
   box-shadow: 0 0 4px #999;
   outline: none;
 }

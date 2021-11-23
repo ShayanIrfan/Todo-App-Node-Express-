@@ -23,13 +23,13 @@
             <h1>Todo App</h1>
             <div class="todo-input-container">
                 <div class="input-div">
-                    <input type="text" name="todo" placeholder="Enter Todo" id="todo-input">
+                    <input type="text" name="todo" placeholder="Enter Todo" id="todo-input" autocomplete="off">
                 </div>
                 <div class="buttons">
-                    <button onclick="submit();" class="ripple">
+                    <button onclick="submit();" class="ripple" onmouseover="glow(this, '#00FF00', 1);" onmouseout="dull(this, 1)">
                         <span class="iconify" data-icon="carbon:add-alt" data-width="27" data-height="27"></span>
                     </button>
-                    <button onclick="submit();" class="ripple">
+                    <button onclick="submit();" class="ripple" onmouseover="glow(this, '#FF0000', 1);" onmouseout="dull(this, 1)">
                         <span class="iconify" data-icon="carbon:delete" data-width="27" data-height="27"></span>
                         <span class="iconify" data-icon="carbon:asterisk" data-width="13" data-height="13"></span>
                     </button>
