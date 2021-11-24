@@ -72,8 +72,18 @@ li {
   width: 450px;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
   margin: auto;
+  margin-top: 5px;
+}
+
+li::after {
+  content: '';
+  width: 430px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  background-color: #828689;
+  filter: drop-shadow(0px 2px 2px rgba(130,130,130,1));
 }
 
 .todo-icon {
@@ -132,6 +142,11 @@ svg[data-icon = "carbon:delete"], svg[data-icon = "carbon:asterisk"] {
   color: #E3BFBF;
 }
 
+svg[data-icon = "carbon:asterisk"] {
+  margin-bottom: 11px;
+  margin-left: -2px;
+}
+
 svg[data-icon = "carbon:edit"] {
   color: #a5c1d1;
 }
@@ -144,12 +159,138 @@ svg[data-icon = "carbon:add-alt"] {
   border: none;
   border-radius: 2px;
   padding: 5px;
-  width: 58px;
-  height: 38px;
+  width: 55px;
+  height: 37px;
   text-transform: uppercase;
   cursor: pointer;
   color: white;
   background-color: #262D31;
   box-shadow: 0 0 4px #999;
   outline: none;
+}
+
+@media (max-width: 1280px){
+  .content {
+    padding: 20px 0px 20px 0px;
+  }
+
+  .content div h1 {
+    padding: 15px 5px 15px 5px;
+    font-size: 30px;
+  }
+
+  .todo-input-container {
+    justify-content: space-around;
+    padding: 15px 0px 15px 0px;
+    width: 357px;
+  }
+
+  #todo-input {
+    padding: 9px;
+    width: 221px;
+    font-size: 13px;
+  }
+
+  #todo-input::placeholder {
+    font-size: 13px;
+  }
+
+  .buttons {
+    margin-top: 4px;
+    margin-left: 0px;
+  }
+
+  .buttons button {
+    margin-right: 3px;
+    padding: 4px;
+    width: 49px;
+    height: 32px;
+    font-size: 0px;
+  }
+  
+  svg[data-icon = "carbon:asterisk"] {
+    margin-bottom: 9px;
+    margin-left: -1px;
+  }
+
+  li {
+    padding: 10px;
+    width: 325px;
+    margin-top: 2px;
+  }
+
+  li::after {
+    width: 311px;
+  }
+
+  .list-content {
+    margin-left: 25px;
+    font-size: 13px;
+  }
+
+  .list-btns button {
+    width: 40px;
+    height: 29px;
+  }
+
+  .edit-btn {
+    margin-right: 6.5px;
+  }
+}
+
+@media (max-width: 359px) {
+  .content div h1 {
+    padding: 14px 5px 14px 5px;
+    font-size: 28px;
+  }
+  .todo-input-container {
+    width: 280px;
+  }
+
+  #todo-input {
+    padding: 10px;
+    height: 35px;
+    width: 180px;
+    font-size: 12px;
+  }
+
+  #todo-input::placeholder {
+    font-size: 12px;
+  }
+
+  .buttons {
+    margin-top: 5px;
+    margin-left: 0px;
+  }
+
+  .buttons button {
+    margin-right: 2.5px;
+    padding: 4px;
+    width: 37px;
+    height: 28px;
+  }
+
+  li {
+    padding: 10px;
+    width: 273px;
+    margin-top: 0px;
+  }
+
+  li::after {
+    width: 257px;
+  }
+
+  .list-content {
+    margin-left: 22px;
+    font-size: 12px;
+  }
+
+  .list-btns button {
+    width: 32px;
+    height: 25px;
+  }
+
+  .edit-btn {
+    margin-right: 5.5px;
+  }
 }

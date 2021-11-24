@@ -52,6 +52,15 @@ app.delete('/deleteTodo', (req, res) => {
     }
 })
 
+app.delete('/deleteAll', (req, res) => {
+    if(!req.body) {
+        res.status(400).send("invalid data");
+    } else {
+        todos = todos.filter(v => v.name != req.body.name);
+        res.send("Todos Deleted!!");
+    }
+})
+
 app.listen(port, () => {
     console.log(`Express started on: http://localhost:${port}`);
 })
