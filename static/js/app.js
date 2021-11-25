@@ -146,8 +146,8 @@ function myFunction(x) {
 }
 
 var x = window.matchMedia("(max-width: 1280px)");
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction)
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction);
 
 function myFunction2(y) {
     if (y.matches) { // If media query matches
@@ -166,5 +166,5 @@ function myFunction2(y) {
 }
 
 var y = window.matchMedia("(max-width: 359px)");
-myFunction2(y) // Call listener function at run time
-y.addListener(myFunction2)
+myFunction2(y); // Call listener function at run time
+y.addListener(myFunction2);
