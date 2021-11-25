@@ -49,7 +49,7 @@ const create_fn = (data) => {
     ul.appendChild(li);
 }
 
-axios.get('http://localhost:8080/todos').then(res => {
+axios.get('https://todo-app-node-express.herokuapp.com/todos').then(res => {
     if (res) {
         res.data.map(v => {
             if (v.name === myName) {
@@ -61,10 +61,10 @@ axios.get('http://localhost:8080/todos').then(res => {
 
 const submit = () => {
     let todo = document.getElementById("todo-input");
-    axios.post('http://localhost:8080/submit', { name: myName, todo: todo.value }).then(res => {
+    axios.post('https://todo-app-node-express.herokuapp.com/submit', { name: myName, todo: todo.value }).then(res => {
         if (res) {
             todo.value = ""
-            axios.get('http://localhost:8080/todos').then(res => {
+            axios.get('https://todo-app-node-express.herokuapp.com/todos').then(res => {
                 if (res) {
                     create_fn(res.data[res.data.length - 1].todo);
                 }
@@ -75,7 +75,7 @@ const submit = () => {
 
 const editTodo = (e) => {
     var newVal = prompt("Enter New ToDo: ", e.parentNode.parentNode.childNodes[1].firstChild.nodeValue);
-    axios.put('http://localhost:8080/updateTodo', { name: myName, oldTodo: e.parentNode.parentNode.childNodes[1].firstChild.nodeValue, newTodo: newVal }).then(res => {
+    axios.put('https://todo-app-node-express.herokuapp.com/updateTodo', { name: myName, oldTodo: e.parentNode.parentNode.childNodes[1].firstChild.nodeValue, newTodo: newVal }).then(res => {
         if (res) {
             e.parentNode.parentNode.childNodes[1].firstChild.nodeValue = res.data.todo;
         }
@@ -83,7 +83,7 @@ const editTodo = (e) => {
 }
 
 const deleteTodo = (e) => {
-    axios.delete('http://localhost:8080/deleteTodo', {
+    axios.delete('https://todo-app-node-express.herokuapp.com/deleteTodo', {
         data: {
             name: myName,
             todo: e.parentNode.parentNode.childNodes[1].firstChild.nodeValue
@@ -99,7 +99,7 @@ const deleteTodo = (e) => {
 const deleteAll = () => {
     const res = prompt("Do you want to delete all Todos? ", "yes");
     if (res === "yes") {
-        axios.delete('http://localhost:8080/deleteAll', { data: { name: myName } }).then(res => {
+        axios.delete('https://todo-app-node-express.herokuapp.com/deleteAll', { data: { name: myName } }).then(res => {
             if (res) {
                 while (true) {
                     if (ul.childNodes[1]) {
