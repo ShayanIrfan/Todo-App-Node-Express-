@@ -9,10 +9,68 @@ body {
   color: #FFFFFF;
 }
 
-.content div h1 {
+/* .content div h1 {
   padding: 10px 10px 15px 10px;
   font-family: 'Poppins', sans-serif;
   font-size: 38px;
+} */
+
+.todoapp-animation {
+  margin: 15px auto;
+  display: flex;
+  height: 56px;
+  overflow: hidden;
+  width: 182px;
+}
+
+.todoapp-animation > h1 {
+  font-size: 38px;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.todoapp-animation > h1 {
+  transform: translateY(56px);
+}
+
+.todoapp-animation h1:nth-of-type(1){
+  animation: stagger 1s forwards ease-in-out 0s;
+}
+
+.todoapp-animation h1:nth-of-type(2){
+  animation: stagger 1s forwards ease-in-out 0.1s;
+}
+
+.todoapp-animation h1:nth-of-type(3){
+  animation: stagger 1s forwards ease-in-out 0.2s;
+}
+
+.todoapp-animation h1:nth-of-type(4){
+  animation: stagger 1s forwards ease-in-out 0.3s;
+}
+
+.todoapp-animation h1:nth-of-type(5){
+  animation: stagger 1s forwards ease-in-out 0.4s;
+}
+
+.todoapp-animation h1:nth-of-type(6){
+  animation: stagger 1s forwards ease-in-out 0.5s;
+}
+
+.todoapp-animation h1:nth-of-type(7){
+  animation: stagger 1s forwards ease-in-out 0.6s;
+}
+
+.todoapp-animation h1:nth-of-type(8){
+  animation: stagger 1s forwards ease-in-out 0.7s;
+}
+
+
+@keyframes stagger {
+  to {
+      transform: translateY(0px);
+  }
 }
 
 .content {
@@ -56,10 +114,6 @@ body {
 .buttons {
   margin-top: 4px;
   margin-left: 15px;
-}
-
-.buttons button {
-  margin-right: 5px;
 }
 
 ul {
@@ -123,6 +177,7 @@ li::after {
 
 /* Button style */
 .buttons button {
+  margin-right: 5px;
   border: none;
   border-radius: 2px;
   padding: 5px;
@@ -135,6 +190,7 @@ li::after {
   background-color: #262D31;
   box-shadow: 0 0 4px #999;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -167,6 +223,7 @@ svg[data-icon = "carbon:add-alt"] {
   background-color: #262D31;
   box-shadow: 0 0 4px #999;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 1280px){
@@ -174,9 +231,17 @@ svg[data-icon = "carbon:add-alt"] {
     padding: 20px 0px 20px 0px;
   }
 
-  .content div h1 {
-    padding: 15px 5px 15px 5px;
+  .todoapp-animation {
+    height: 43px;
+    width: 144px;
+  }
+  
+  .todoapp-animation > h1 {
     font-size: 30px;
+  }
+  
+  .todoapp-animation > h1 {
+    transform: translateY(43px);
   }
 
   .todo-input-container {
@@ -239,10 +304,19 @@ svg[data-icon = "carbon:add-alt"] {
 }
 
 @media (max-width: 359px) {
-  .content div h1 {
-    padding: 14px 5px 14px 5px;
+  .todoapp-animation {
+    height: 41px;
+    width: 134px;
+  }
+  
+  .todoapp-animation > h1 {
     font-size: 28px;
   }
+  
+  .todoapp-animation > h1 {
+    transform: translateY(41px);
+  }
+
   .todo-input-container {
     width: 280px;
   }

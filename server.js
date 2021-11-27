@@ -11,6 +11,7 @@ app.use('/', express.static(__dirname + '/static'));
 let todos = []
 
 app.get('/todos', (req, res) => {
+    console.log(todos)
     res.json(todos);
 })
 
@@ -30,14 +31,13 @@ app.put('/updateTodo', (req, res) => {
     if (!req.body) {
         res.status(400).send("invalid data");
     } else {
-        const index = todos.indexOf({
-            name: req.body.name,
-            todo: req.body.oldTodo
+        let index;
+        todos.map((v, i) => {
+            if (v.name === req.body.name && v.todo === req.body.oldTodo) {
+                todos[i] = { name: req.body.name, todo: req.body.newTodo };
+                index = i;
+            }
         })
-        todos[index] = {
-            name: req.body.name,
-            todo: req.body.newTodo
-        }
         res.json(todos[index]);
     }
 })
@@ -53,7 +53,7 @@ app.delete('/deleteTodo', (req, res) => {
 })
 
 app.delete('/deleteAll', (req, res) => {
-    if(!req.body) {
+    if (!req.body) {
         res.status(400).send("invalid data");
     } else {
         todos = todos.filter(v => v.name != req.body.name);
