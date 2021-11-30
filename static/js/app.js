@@ -75,11 +75,13 @@ const submit = () => {
 
 const editTodo = (e) => {
     var newVal = prompt("Enter New ToDo: ", e.parentNode.parentNode.childNodes[1].firstChild.nodeValue);
-    axios.put('https://todo-app-node-express.herokuapp.com/updateTodo', { name: myName, oldTodo: e.parentNode.parentNode.childNodes[1].firstChild.nodeValue, newTodo: newVal }).then(res => {
-        if (res) {
-            e.parentNode.parentNode.childNodes[1].firstChild.nodeValue = res.data.todo;
-        }
-    })
+    if (newVal !== e.parentNode.parentNode.childNodes[1].firstChild.nodeValue && newVal) {
+        axios.put('https://todo-app-node-express.herokuapp.com/updateTodo', { name: myName, oldTodo: e.parentNode.parentNode.childNodes[1].firstChild.nodeValue, newTodo: newVal }).then(res => {
+            if (res) {
+                e.parentNode.parentNode.childNodes[1].firstChild.nodeValue = res.data.todo;
+            }
+        })
+    }
 }
 
 const deleteTodo = (e) => {

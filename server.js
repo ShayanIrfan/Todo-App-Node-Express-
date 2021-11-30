@@ -46,8 +46,11 @@ app.delete('/deleteTodo', (req, res) => {
     if (!req.body) {
         res.status(400).send("invalid data");
     } else {
-        const index = todos.indexOf(req.body)
-        todos.splice(index, 1);
+        todos.map((v, i) => {
+            if (v.name === req.body.name && v.todo === req.body.todo) {
+                todos.splice(i, 1);
+            }
+        })
         res.send("Todo deleted!!");
     }
 })
