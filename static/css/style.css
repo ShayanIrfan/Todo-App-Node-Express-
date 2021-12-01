@@ -145,6 +145,9 @@ li::after {
 }
 
 .list-content {
+  width: 222px;
+  word-wrap: break-word;
+  text-align: left;
   margin-top: 8px;
   margin-left: 28px;
   font-size: 18px;
@@ -154,7 +157,7 @@ li::after {
 .list-btns {
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  top: 22%;
 }
 
 .edit-btn {
@@ -289,6 +292,7 @@ svg[data-icon = "carbon:add-alt"] {
   }
 
   .list-content {
+    width: 145px;
     margin-left: 25px;
     font-size: 13px;
   }
@@ -355,6 +359,7 @@ svg[data-icon = "carbon:add-alt"] {
   }
 
   .list-content {
+    width: 117px;
     margin-left: 22px;
     font-size: 12px;
   }

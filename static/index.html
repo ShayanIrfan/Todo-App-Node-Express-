@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <script src="js/app.js"></script>
     <div class="content">
         <div>
             <div class="todoapp-animation">
@@ -35,10 +36,10 @@
                     <input type="text" name="todo" placeholder="Enter Todo" id="todo-input" autocomplete="off">
                 </div>
                 <div class="buttons">
-                    <button onclick="submit();" class="ripple" onmouseover="glow(this, '#00FF00', 1);" onmouseout="dull(this, 1)">
+                    <button onclick="obj.submit();" class="ripple" onmouseover="obj.glow(this, '#00FF00', 1);" onmouseout="obj.dull(this, 1)">
                         <span id="add-icon" class="iconify" data-icon="carbon:add-alt" data-width="27" data-height="27"></span>
                     </button>
-                    <button onclick="deleteAll();" class="ripple" onmouseover="glow(this, '#FF0000', 1);" onmouseout="dull(this, 1)">
+                    <button onclick="obj.deleteAll();" class="ripple" onmouseover="obj.glow(this, '#FF0000', 1);" onmouseout="obj.dull(this, 1)">
                         <span id="delete-icon" class="iconify" data-icon="carbon:delete" data-width="27" data-height="27"></span>
                         <span id="asterisk-icon" class="iconify" data-icon="carbon:asterisk" data-width="13" data-height="13"></span>
                     </button>
@@ -52,7 +53,9 @@
             </ul>
         </div>
     </div>
-    <script src="js/app.js"></script>
+    <script>
+        var obj = new run();
+    </script>
 </body>
 
 </html>
